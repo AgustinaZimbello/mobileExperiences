@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="../css/superfish.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/template.css">
+
+    <link rel="stylesheet" href="../css/leaflet.css">
+    <link rel="stylesheet" href="../css/esri-leaflet-geocoder.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <script src="../cordova.js"></script>
+
+    <script src="../js/application/globalVariables.js"></script>
+    <script src="../libs/jquery-2.1.1.min.js"></script>
+    <script src="../js/application/index.js"></script>
+    <script src="../js/css/bootstrap.min.js"></script>
+
+    <script src="js/saveTemplates.js"></script>
+    <script src="js/saveTemplates.js"></script>
+    <script src="js/previewEndTemplate.js"></script>
+
+
+    <script type="text/javascript">
+        function init() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        function onDeviceReady() {
+            phonegapReady();
+
+        }
+    </script>
+    <title>Herramienta de Autor</title>
+</head>
+
+
+<body onload="init()">
+<div id="template">
+    <div id="wrapper">
+        <div id="main">
+            <section id="">
+                <div class="container">
+                    <header class="major">
+                        <h2 class="alignCenter" id="et_inputTitle"></h2>
+                        <div></div>
+                    </header>
+                    <div class="row uniform">
+                        <div class="12u">
+                            <p class="alignCenter" id="et_inputParagraph"></p>
+                        </div>
+                    </div>
+                    <h3 class="alignCenter" id="et_inputQuestion"></h3>
+                    <div class="container alignCenter marginBottom">
+                        <i id="iconQuestionEnd" class="fa-spin"></i>
+                    </div>
+                    <div class="row uniform alignCenter">
+                        <div class="12u">
+                            <ul class="actions">
+                                <li><input id="et_button1" type="submit" class="special" value="Ver Desempe&ntilde;o"/>
+                                </li>
+                                <li><input id="et_button2" type="reset" value="Salir del juego"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div id="menu" class="container">
+    <div class="row text-center">
+        <div id="saveTemplate"
+             class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+            <div class=" animate-box fadeInUp animated" style="">
+                <figure>
+                    <img src="../images/menu/save.png" style="with: 64px; height: 64px;"/>
+                </figure>
+                <h5 style="margin: 0px;">Guardar Template</h5>
+            </div>
+        </div>
+        <div id="EliminarContenido"
+             class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+            <div class=" animate-box fadeInUp animated " style="">
+                <figure>
+                    <img src="../images/menu/tacho.png" style="with: 64px; height: 64px;"/>
+                </figure>
+                <h5 style="margin: 0px;">Borrar Template</h5>
+            </div>
+        </div>
+        <div id="previewIndicationMapTemplate"
+             class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+            <div class=" animate-box fadeInUp animated " style="">
+                <figure>
+                    <img src="../images/menu/select.png" style="with: 64px; height: 64px;"/>
+                </figure>
+                <h5 style="margin: 0px;">Volver</h5>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

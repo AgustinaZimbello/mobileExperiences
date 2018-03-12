@@ -1,0 +1,104 @@
+.geocoder-control-input {
+  background-color: white;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 13px;
+  padding: 6px;
+  height:2.4em;
+  width: 100%;
+  -webkit-transition: all .125s ease-in;
+  -moz-transition: all .125s ease-in;
+  -ms-transition: all .125s ease-in;
+  -o-transition: all .125s ease-in;
+  transition: all .125s ease-in;
+  text-indent: 8px;
+  border:none;
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.75);
+  background-image: url("../images/search.png");
+  background-repeat: no-repeat;
+  background-position: 19em;
+  background-size: 14px 14px;
+  left:2em;
+
+}
+
+.geocoder-control-input:hover {
+  background-color: #f4f4f4;
+  cursor:pointer;
+}
+
+ .geocoder-control {
+  position:relative;
+  bottom:6.5em;
+  left:21em;
+  width: 275px;
+  -webkit-transition: all .175s ease-in;
+  -moz-transition: all .175s ease-in;
+  -ms-transition: all .175s ease-in;
+  -o-transition: all .175s ease-in;
+  transition: all .175s ease-in;
+  border-radius: 7px;
+  background: none repeat scroll 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.geocoder-control.geocoder-control-expanded {
+  width: 275px;
+}
+
+.geocoder-control.geocoder-control-expanded .geocoder-control-input {
+  background-position: 19em;
+}
+
+.geocoder-control-input.loading {
+  background-image: url("../images/loading.gif");
+  background-size: 16px 16px;
+  background-position: 19em;
+  background-repeat:no-repeat;
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+  .geocoder-control-input {
+    background-image: url("../images/search@2x.png");
+
+  }
+  .geocoder-control-input.loading {
+    background-image: url("../images/loading@2x.gif");
+  }
+}
+
+.geocoder-control-input:focus {
+  outline: none;
+}
+
+.geocoder-control-suggestions {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 45px 0 0 0;
+  overflow: hidden;
+}
+
+.geocoder-control-suggestions li {
+  font-size: 13px;
+  padding: 7px;
+  background: white;
+  border-top: 1px solid #f1f1f1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.geocoder-control-suggestions li:first-child {
+  border: none;
+}
+
+.geocoder-control-suggestions li.geocoder-control-selected,
+.geocoder-control-suggestions li:hover {
+  background: #5CBC67;
+  border-color: #5CBC67;
+}

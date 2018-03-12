@@ -1,0 +1,29 @@
+{
+  "name": "com.lifia.mobileexperiences",
+  "displayName": "HelloCordova",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "com.sharerevolution.cordova.screenshot.crosswalkandiosonly": "git+https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+    "cordova-android": "^6.2.3",
+    "cordova-plugin-imagepicker": "^1.3.0",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "phonegap": "^7.1.1"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "com.sharerevolution.cordova.screenshot": {},
+      "cordova-plugin-imagepicker": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}

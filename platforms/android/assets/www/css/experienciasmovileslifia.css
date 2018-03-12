@@ -1,0 +1,22 @@
+.map-selection-div, .option-selection-div{
+	width: 33.33%;
+	float: left;
+	margin-top: 0em;
+}
+
+.map-selection-div{
+	margin-top: 3em;
+}
+
+.map-selection-div div, .option-selection-div div{
+	border: solid #15B880 0.3em;
+	cursor: pointer;
+	margin: 23px auto 0px;
+	height: 122px;
+	width: 122px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: url('../img/navico/satellite.png');
+	border-radius: 4em;
+	background-size: 7em;
+}

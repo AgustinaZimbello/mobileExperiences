@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-imagepicker",
+        "scope": null,
+        "escapedName": "cordova-plugin-imagepicker",
+        "name": "cordova-plugin-imagepicker",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\Martín\\mobileExperiences\\node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-imagepicker@latest",
+  "_id": "cordova-plugin-imagepicker@1.3.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-imagepicker",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "jeduan",
+    "email": "jeduan@gmail.com"
+  },
+  "_npmVersion": "2.14.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-imagepicker",
+    "scope": null,
+    "escapedName": "cordova-plugin-imagepicker",
+    "name": "cordova-plugin-imagepicker",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-imagepicker/-/cordova-plugin-imagepicker-1.3.0.tgz",
+  "_shasum": "a5ec42d248e8435973975e0e7b92e2d7c35cfe11",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-imagepicker",
+  "_where": "C:\\Users\\Martín\\mobileExperiences\\node_modules",
+  "bugs": {
+    "url": "https://github.com/jeduan/cordova-plugin-imagepicker/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-imagepicker",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "This plugin allows selection of multiple images from the camera roll / gallery in a phonegap app",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "a5ec42d248e8435973975e0e7b92e2d7c35cfe11",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-imagepicker/-/cordova-plugin-imagepicker-1.3.0.tgz"
+  },
+  "gitHead": "cf1c7728dc252f29364656890b4b14fbcdf2d14e",
+  "homepage": "https://github.com/jeduan/cordova-plugin-imagepicker#readme",
+  "keywords": [
+    "cordova",
+    "image",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "media"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "jeduan",
+      "email": "jeduan@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-imagepicker",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeduan/cordova-plugin-imagepicker.git"
+  },
+  "scripts": {},
+  "version": "1.3.0"
+}

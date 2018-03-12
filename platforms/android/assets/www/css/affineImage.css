@@ -1,0 +1,12 @@
+html, body {
+    border: 0px;
+}
+
+#theCanvas {
+    z-index: 2;
+    position: absolute;
+    left: 0em;
+    top:0em;
+    float: left;
+    pointer-events:none;
+}

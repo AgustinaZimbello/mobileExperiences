@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.lifia.mobileExperiences"
+    },
+    "com.sharerevolution.cordova.screenshot": {
+      "PACKAGE_NAME": "com.lifia.mobileExperiences"
+    },
+    "cordova-plugin-imagepicker": {
+      "PACKAGE_NAME": "com.lifia.mobileExperiences"
+    }
+  },
+  "dependent_plugins": {}
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- Superfish -->
+<link rel="stylesheet" href="css/superfish.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/leaflet.usermarker.css" />
+<link rel="stylesheet" href="css/leaflet.css">
+<!-- <link rel="stylesheet" href="css/esri-leaflet-geocoder.css"> -->
+
+<!-- Librería buscador google -->
+<script src="cordova.js"></script>
+<script src="libs/leaflet.js"></script>
+<script src="libs/leaflet-src.js"></script>
+<script src="js/application/globalVariables.js"></script>
+<script src="libs/jquery-2.1.1.min.js"></script>
+<script src="libs/googleLibs/l.control.geosearch.js"></script>
+<script src="libs/googleLibs/l.geosearch.provider.google.js"></script>
+<script src="libs/leaflet.usermarker.js"></script>
+<script src="libs/jquery-ui.js"></script>
+<script src="libs/esri-leaflet-geocoder.js"></script>
+<script src="js/application/selectSatMap.js"></script>
+<script src="libs/LeafletAffineImageOverlay.js">
+
+
+	<script src="../js/application/optionMenu.js"></script>
+
+
+
+<script type="text/javascript">
+	function init() {
+		document.addEventListener("deviceready", onDeviceReady, false);
+	}
+	function onDeviceReady() {
+		phonegapReady();
+
+	}
+</script>
+
+<title>Herramienta de Autor</title>
+</head>
+
+<body style="height: 100%;" onload="init()">
+	<div class="container">
+		<div class="row">
+			<div
+					class="col-md-8 col-md-offset-2 text-center heading-section animate-box fadeInUp animated"
+					style="margin-bottom: 1em; margin-top: 1em;">
+				<div class="logo">
+					<p style="margin-left: 0.5em;">Herramienta de Autor</p>
+				</div>
+			</div>
+			<div class="text-center">
+				<a id="optionMenu" class="btn btn-primary" href="#">Menu</a>
+			</div>
+		</div>
+	</div>
+	<div id="map"
+		style="height: 100%; background-color: rgba(222, 222, 222, 0.1);"></div>
+	<div id="menu" class="container">
+		<div class="row text-center">
+			<div id="IndoorMap"
+				class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+				<div class=" animate-box fadeInUp animated" style="">
+					<figure>
+						<img src="images/icon/marker.png" />
+					</figure>
+					<h3 style="margin: 0px;">NUEVA POSICION</h3>
+				</div>
+			</div>
+
+			<div id="IndoorMap"
+				class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+				<div class=" animate-box fadeInUp animated " style="">
+					<figure>
+						<img src="images/icon/tacho.png">
+					</figure>
+					<h3 style="margin: 0px;">ELIMINAR POSICION</h3>
+				</div>
+			</div>
+			<div id="selectMapFromGallery"
+				class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+				<div class=" animate-box fadeInUp animated " style="">
+					<figure>
+						<img src="images/icon/select.png">
+					</figure>
+					<h3 style="margin: 0px;">NUEVO MAPA INDOOR</h3>
+				</div>
+			</div>
+			<div id="IndoorMap"
+				class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+
+				<div class=" animate-box fadeInUp animated " style="">
+					<figure>
+						<img src="images/icon/save.png" alt="user">
+					</figure>
+					<h3 style="margin: 0px;">EXPORTAR</h3>
+				</div>
+			</div>
+
+			<div id="IndoorMap"
+				class="col-md-4 col-sm-4 col-xs-4 col-sm-4 menuCustom">
+
+				<div class=" animate-box fadeInUp animated " style="">
+					<figure>
+						<img src="images/icon/help.png" alt="user">
+					</figure>
+					<h3 style="margin: 0px;">AYUDA</h3>
+				</div>
+			</div>
+			<div id="IndoorMap"
+				class="col-md-4 col-sm-4 col-xs-4 col-sm-4 menuCustom">
+				<div class=" animate-box fadeInUp animated " style="">
+					<figure>
+						<img src="images/home.png" alt="user">
+					</figure>
+					<h3 style="margin: 0px;">VOLVER</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/superfish.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/leaflet.css">
+<link rel="stylesheet" href="css/contentBox.css">
+<link rel="stylesheet" href="css/leaflet.usermarker.css" />
+<link rel="stylesheet" href="css/esri-leaflet-geocoder.css">
+
+
+<script src="cordova.js"></script>
+<script src="libs/redips/redips-drag-source.js"></script>
+<script src="libs/redips/redipsInit.js"></script>
+<script src="js/application/questionBox.js"></script>
+<script src="libs/jquery-2.1.1.min.js"></script>
+<script src="libs/jquery-ui.js"></script>
+<script src="libs/jquery-mask.js"></script>
+<script src="js/transit.js"></script>
+<script src="libs/leaflet.js"></script>
+<script src="libs/leaflet.usermarker.js"></script>
+<script src="libs/esri-leaflet-geocoder.js"></script>
+<script src="libs/AffineImageLayer.js"></script>
+<script src="libs/L.Affine.Toolbox.js"></script>
+<script src="libs/googleLibs/l.control.geosearch.js"></script>
+<script src="libs/googleLibs/l.geosearch.provider.google.js"></script>
+<script src="js/application/globalVariables.js"></script>
+<script src="js/application/menuFunctions.js"></script>
+
+
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="libs/jsPlumbLibs/jsBezier-0.6.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-util.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-dom-adapter.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-drag.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-endpoint.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-connection.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-anchors.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-defaults.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-connectors-statemachine.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-connectors-flowchart.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-renderers-svg.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-renderers-canvas.js"></script>
+<script src="libs/jsPlumbLibs/src/jsPlumb-renderers-vml.js"></script>
+<script src="libs/jsPlumbLibs/src/jquery.jsPlumb.js"></script>
+<script src="libs/jsPlumbLibs/jsPlumbInit.js"></script>
+
+<script src="js/application/creators.js"></script>
+<script src="js/application/contentBox.js"></script>
+
+<script type="text/javascript">
+	function init() {
+		document.addEventListener("deviceready", onDeviceReady, false);
+	}
+	function onDeviceReady() {
+		phonegapReady();
+
+	}
+</script>
+
+<title>Mobile Experiences Builder</title>
+</head>
+<body onload="init()">
+	<div id="st-container" class="st-container">
+		<nav class="st-menu st-effect-10 st-menu-content" id="menu-10">
+		</nav>
+		<!-- <div id="createContent"></div> -->
+		<div id="popbox-contentBUILDING" class="content-definer" style="">
+			<div id="mecanismo-contentBUILDING" class="gps"></div>
+			<div id="qr-contentBUILDING" class="qr-definer">
+				<img class="close-qr" src="../img/close2.png">
+			</div>
+			<div id="drag-contentBUILDING" class="drag-window">
+				<!-- left container -->
+				<div id="left">
+					<table id="table1-contentBUILDING" class="table1">
+						<colgroup>
+							<col width="200">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="dark">
+									<div style="border-style: none; cursor: move;"
+										class="drag clone content content-bar-item imageButton"></div>
+								</td>
+							</tr>
+							<tr>
+								<td class="dark">
+									<div style="border-style: none; cursor: move;"
+										class="drag clone content content-bar-item videoButton"></div>
+
+								</td>
+							</tr>
+							<tr>
+								<td class="dark">
+									<div style="border-style: none; cursor: move;"
+										class="drag clone content content-bar-item audioButton"></div>
+								</td>
+							</tr>
+							<tr>
+								<td class="dark">
+									<div style="border-style: none; cursor: move;"
+										class="drag clone content content-bar-item textButton"></div>
+								</td>
+							</tr>
+							<tr>
+								<td class="dark">
+									<div style="border-style: none; cursor: move;"
+										class="drag clone content content-bar-item questionButton"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- left container -->
+				<!-- right container -->
+				<div id="right">
+					<table id="grid-contentBUILDING" class="t2">
+						<colgroup>
+							<col width="200">
+							<col width="200">
+							<col width="200">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- right container -->
+				<div id="bottom">
+					<table id="trash">
+						<colgroup>
+							<col width="200">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="trash"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- trash container -->
+				<div style="height: 1px; width: 1px;" id="redips_clone"></div>
+			</div>
+			<!-- drag container -->
+			<form id="order-contentBUILDING" class="forms">
+				<div class="order-element first-element">
+					<input name="order-element" value="first-element" type="radio"><label>Primer
+						elemento</label>
+				</div>
+				<div class="order-element last-element">
+					<input name="order-element" value="last-element" type="radio"><label>&Uacute;ltimo
+						elemento</label>
+				</div>
+				<div class="order-element inter-element">
+					<input name="order-element" value="inter-element" checked=""
+						type="radio"><label>Elemento intermedio</label>
+				</div>
+			</form>
+
+			<button id="saveDefinition-contentBUILDING"
+				class="button action redbtn save">
+				<span class="glabel">GUARDAR</span>
+			</button>
+		</div>
+	</div>
+</body>
+<!-- <script type="text/javascript">
+var qrcode = new QRCode("qr-contentBUILDING", {
+       text: "contentBUILDING",
+       width: 255,
+       height: 255,
+       colorDark : "#000000",
+       colorLight : "#ffffff",
+       correctLevel : QRCode.CorrectLevel.H
+   });
+</script> -->

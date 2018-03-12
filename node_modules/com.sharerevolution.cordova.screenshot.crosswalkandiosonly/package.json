@@ -1,0 +1,98 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+        "spec": "git+https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+          "sshUrl": "git+ssh://git@github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+          "httpsUrl": "git+https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+          "gitUrl": "git://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+          "shortcut": "github:perry2of5/cordova-screenshot-crosswalk-ios-only",
+          "directUrl": "https://raw.githubusercontent.com/perry2of5/cordova-screenshot-crosswalk-ios-only/master/package.json"
+        }
+      },
+      "C:\\Users\\Martín\\mobileExperiences\\node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+  "_id": "com.sharerevolution.cordova.screenshot.crosswalkandiosonly@0.1.6",
+  "_inCache": true,
+  "_location": "/com.sharerevolution.cordova.screenshot.crosswalkandiosonly",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+    "spec": "git+https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+      "sshUrl": "git+ssh://git@github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+      "httpsUrl": "git+https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+      "gitUrl": "git://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+      "shortcut": "github:perry2of5/cordova-screenshot-crosswalk-ios-only",
+      "directUrl": "https://raw.githubusercontent.com/perry2of5/cordova-screenshot-crosswalk-ios-only/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git#ba2b834c180871bd76a335d82f27dd4fd67a86c3",
+  "_shasum": "0c1ad0ed9a9e92c8e85038d01bf5fb5889f187b7",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git",
+  "_where": "C:\\Users\\Martín\\mobileExperiences\\node_modules",
+  "author": {
+    "name": "Tim Perry et. al. including Hongbo LU"
+  },
+  "bugs": {
+    "url": "https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only/issues"
+  },
+  "cordova": {
+    "id": "com.sharerevolution.cordova.screenshot.crosswalkandiosonly",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "screenshot Cordova Plugin for Android (Crosswalk) and iOS, only provides screenshot as URI, not as file.",
+  "devDependencies": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=6.0.0"
+    }
+  ],
+  "gitHead": "ba2b834c180871bd76a335d82f27dd4fd67a86c3",
+  "homepage": "https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only#readme",
+  "keywords": [
+    "cordova",
+    "screenshot",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "com.sharerevolution.cordova.screenshot.crosswalkandiosonly",
+  "optionalDependencies": {},
+  "readme": "cordova-screenshot\r\n==================\r\n\r\n[![NPM version](http://img.shields.io/npm/v/com.sharerevolution.cordova.screenshot.svg?style=flat)](https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git)\r\n\r\n\r\nThe Screenshot plugin allows your application to take screenshots of the current screen and save them into the phone.\r\n\r\nThis is a fork of https://github.com/gitawego/cordova-screenshot.git which supports only crosswalk on Android and the\r\ndefault webview on iOS. The goal is to allow a screenshot of the crosswalk display without needing to request\r\npermissions to the file system or the user's images. This works if you want to get screenshot of the app for support\r\npurposes.... The image can not be written to disk since the permission is not requested...thus may exhibit out of\r\nmemory issues on devices with very high screen resolutions but with not much memory free.\r\n\r\n##how to install\r\n\r\ninstall it via cordova cli\r\n\r\n```\r\ncordova plugin add https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git\r\n```\r\n\r\nnotice:\r\nOn iOS, only jpg format is supported.\r\nOn Android, only [Crosswalk](https://crosswalk-project.org/documentation/cordova.html) is supported\r\n\r\n##usage\r\n\r\n\r\ntake screenshot and get it as Data URI\r\n```js\r\nnavigator.screenshot.URI(function(error,res){\r\n  if(error){\r\n    console.error(error);\r\n  }else{\r\n    html = '<img style=\"width:50%;\" src=\"'+res.URI+'\">';\r\n    document.body.innerHTML = html;\r\n  }\r\n},50);\r\n```\r\n\r\n##usage in AngularJS  TODO: update to use URI\r\n\r\n```js\r\n.service('$cordovaScreenshot', ['$q', function ($q){\r\n\treturn {\r\n\t\tcapture: function (filename, extension, quality){\r\n\t\t\textension = extension || 'jpg';\r\n\t\t\tquality = quality || '100';\r\n\r\n\t\t\tvar defer = $q.defer();\r\n\t\t\t\r\n\t\t\tnavigator.screenshot.save(function (error, res){\r\n\t\t\t\tif (error) {\r\n\t\t\t\t\tconsole.error(error);\r\n\t\t\t\t\tdefer.reject(error);\r\n\t\t\t\t} else {\r\n\t\t\t\t\tconsole.log('screenshot saved in: ', res.filePath);\r\n\t\t\t\t\tdefer.resolve(res.filePath);\r\n\t\t\t\t}\r\n\t\t\t}, extension, quality, filename);\r\n\t\t\t\r\n\t\t\treturn defer.promise;\r\n\t\t}\r\n\t};\r\n}])\r\n```\r\n\r\n##Known Issue\r\n###in Android platform I receive the black image with crosswalk \r\n####solution: \r\n\r\nadd this line ``<preference name=\"CrosswalkAnimatable\" value=\"true\" />`` in config.xml, see [bug](https://crosswalk-project.org/jira/browse/XWALK-2233)\r\n\r\n\r\nLicense\r\n=========\r\nthis repo uses the MIT license\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git"
+  },
+  "version": "0.1.6"
+}

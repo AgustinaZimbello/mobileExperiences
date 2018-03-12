@@ -1,0 +1,56 @@
+.draggable-content {
+    position: absolute;
+    z-index: 15;
+    background-size: 30em auto;
+    width: 2em;
+    height: 4em;
+    line-height: 26px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    cursor: move;
+    border-width: 0.2em;
+}
+
+.window, .label {
+    background-color: #FFF;
+    text-align: center;
+    z-index: 24;
+    cursor: pointer;
+    box-shadow: 2px 2px 19px #AAA;
+}
+
+.window {
+    border:none;
+    position: absolute;
+    padding: 0.5em;
+    float: left;
+    z-index: 15;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    cursor: move;
+    background-image: url('../img/content.png');
+    background-size: 2.6em auto;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.content-ep{
+    position: relative;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: green;
+    opacity: 0.6;
+    cursor: pointer;
+    border-radius: 1em;
+    left: 0.24em;
+    bottom: -3.5em;
+    cursor: pointer;
+   
+}
+
