@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/superfish.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+   
+    <script src="../cordova.js"></script>
+    <script src="../libs/jquery-2.1.1.min.js"></script>
+    <script src="js/templates.js"></script>
+
+
+    <script type="text/javascript">
+	function init() {
+		document.addEventListener("deviceready", onDeviceReady, false);
+	}
+	function onDeviceReady() {
+		phonegapReady();
+	}
+
+    </script>
+
+    <title>Herramienta de Autor</title>
+</head>
+<body onload="init()">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box fadeInUp animated"
+                style="margin-bottom: 2em; margin-top: 1em;">
+            <div class="logo">
+                <p style="margin-left: 0.5em;">Herramienta de Autor</p>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <h4 style="margin-bottom: 0.5em;">Selecciona el tipo de template que deseas asociar</h4>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row text-center">
+        <div id="existingTemplates"
+             class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
+            <div class="services animate-box fadeInUp animated"
+                 style="border-radius: 2em;">
+                <figure>
+                    <img src="../images/menu/carpeta%20(2).png" style="with: 52px; height: 52px;"/>
+                </figure>
+                <h3> Templates: Aprendo Jugando</h3>
+            </div>
+        </div>
+        <div id="whiteTemplate"
+             class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
+            <div class="services animate-box fadeInUp animated"
+                 style="border-radius: 2em;">
+                <figure>
+                    <img src="../images/menu/lapiz%20(2).png" style="with: 52px; height: 52px;"/>
+                </figure>
+                <h3>Template Creados mediante Template Blanco</h3>
+            </div>
+        </div>
+
+    </div>
+</div>

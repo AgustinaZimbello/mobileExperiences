@@ -3,38 +3,55 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css?family=Meera+Inimai" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/jquery-ui.css"/>
-    <link rel="stylesheet" href="../css/leaflet.css">
+    <link rel="stylesheet" href="../libs/leaflet/leaflet.css">
     <link rel="stylesheet" href="../css/leaflet.usermarker.css"/>
     <link rel="stylesheet" href="../css/markers.css"/>
     <link rel="stylesheet" href="../css/esri-leaflet-geocoder.css">
-    <link rel="stylesheet" href="../css/leaflet.css">
+
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/jsplumbtoolkit-defaults.css">
+    <link rel="stylesheet" href="../css/jsplumbtoolkit-demo.css">
+
 
     <script src="../cordova.js"></script>
 
+    <!--<script src="../libs/jquery.min.js"></script>-->
     <script src="../libs/jquery-2.1.1.min.js"></script>
     <script src="../libs/jquery-ui.js"></script>
     <script src="../libs/touch-adapter-0.1.js"></script>
+    <script src="../js/css/bootstrap.min.js"></script>
+    <!--<script src="../js/LeafletJS/leaflet.js"></script>>-->
+    <!--<script src="../libs/polyline/leaflet.js"></script>-->
 
-    <script src="../libs/leaflet.js"></script>
+    <script src="../libs/leaflet/leaflet-src.js"></script>
+    <script src="../libs/leaflet/leaflet.js"></script>
+    <script src="../js/application/globalVariables.js"></script>
+    <script src="../libs/polyline/L.PolylineDecorator.js"></script>
+    <script src="../libs/polyline/leaflet.polylineDecorator.js"></script>
+    <script src="../libs/polyline/L.Symbol.js"></script>
     <script src="../libs/leaflet.usermarker.js"></script>
-    <script src="../libs/AffineImageLayer.js"></script>
-    <script src="../libs/L.Affine.Toolbox.js"></script>
+    <script src="../js/LeafletJS/Leaflet.AffineImage/AffineImageLayer.js"></script>
+    <script src="../js/LeafletJS/Leaflet.AffineImage/L.AffineToolbox.js"></script>
     <script src="../libs/esri-leaflet-geocoder.js"></script>
     <script src="../libs/googleLibs/l.control.geosearch.js"></script>
     <script src="../libs/googleLibs/l.geosearch.provider.google.js"></script>
 
+    <script src="js/localStorageManager.js"></script>
+    <script src="js/modalUtils.js"></script>
 
     <script src="js/jquery.popmenu.js"></script>
+    <script src="js/popmenus.js"></script>
+
 
     <script src="js/selectionGeoMap.js"></script>
     <script src="js/optionMenumap.js"></script>
-    <script src="../js/application/globalVariables.js"></script>
+
+
 
     <!-- support lib for bezier stuff -->
     <script src="../libs/jsPlumbLibs/jsBezier-0.6.js"></script>
@@ -68,13 +85,14 @@
     <script src="../libs/jsPlumbLibs/src/jquery.jsPlumb.js"></script>
     <!-- jsplumb initializer-->
     <script src="../libs/jsPlumbLibs/jsPlumbInit.js"></script>
+    <script src="../libs/jquery.validate.js"></script>
 
-    <script src="js/jquery.popmenu.js"></script>
+    <!--<script src="js/jquery.popmenu.js"></script>-->
 
     <script src="../libs/hammer.min.js"></script>
 
     <script src="../libs/qr/qrcode.min.js"></script>
-    <script src="../js/css/bootstrap.min.js"></script>
+
     <script type="text/javascript">
         function init() {
             document.addEventListener("deviceready", onDeviceReady, false);
@@ -86,6 +104,14 @@
         }
     </script>
     <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100vw;
+        }
         #containerMenu {
             max-width: 480px;
             width: 100%;
@@ -120,23 +146,80 @@
 </head>
 <!-- <img src="images/icon/marker.png" style="with: 48px; height: 48px;" />  -->
 <body style="height: 100%;" onload="init()">
-<div id='title' class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box fadeInUp animated"
-             style="margin-bottom: 1em; margin-top: 1em;">
-            <div class="logo">
-                <p style="margin-left: 0.5em;">Herramienta de Autor</p>
+<div id='title' class="container ">
+    <div class="row " style="margin-bottom:20px">
+        <div class="col-md-8 col-md-offset-2 text-center  animate-box fadeInUp animated"
+             style="margin-bottom: 1em; margin-top: 1em; float:left;">
+            <div class="logo " style="position: fixed; left: 50%;margin-left: -140px;">
+                <p class="principal" style="margin-left: 1.8em; font-size:21px;">Herramienta de Autor</p>
             </div>
         </div>
-        <div style="float: right;">
-            <a id="optionMenu" href="#"><img src="../images/opciones.png" style="with: 48px; height: 48px;"/></a>
+        <div style="float: right; margin-top: 7px;">
+            <a id="saveWhiteTemplate" href="#"><img src="../images/menu/descargar.png" style="width: 40px; height: 40px;"/></a>
+            <a id="cleanTemplate" href="#"><img src="../images/menu/borrar.png" style="width: 40px; height: 40px;"/></a>
+            <a id="optionMenu" href="#"><img src="../images/menu/menu.png" style="width: 40px; height: 40px;"/></a>
         </div>
     </div>
-
 </div>
+</div>
+
 <div id="map"
-     style="height: 100%; background-color: rgba(222, 222, 222, 0.1); z-index:0">
+     style=" background-color: rgba(222, 222, 222, 0.1); z-index:0 ;  ">
     <div id="demo_box"></div>
+    <div id="arrow_menu"></div>
+</div>
+
+<div id="connect" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Selección de POI destino</h4>
+            </div>
+            <div class="modal-body">
+                <p>Selecciona con cual Punto de Interes deseas conectar</p>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div id='pois' class="carousel-inner">
+                        <div id="a" class="item active"><img src="../images/abccontents/content_a.png" height="30"
+                                                             width="30"></div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button"
+
+                       data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                       data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="saveConnection" class="btn btn-primary">Conectar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="exportModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">La Aplicación se generó exitosamente</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Deseas exportar la aplicación creada?</p>
+
+            </div>
+            <div class="modal-footer">
+                <button id="saveJSON" type="button" class="btn btn-primary">Conectar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="QRModal" class="modal fade" role="dialog">
@@ -155,57 +238,37 @@
             </div>
         </div>
     </div>
-
 </div>
 
-<div id="menu" class="container">
+<div id="menu" class="container" style="margin-top:1px;width:100%;">
     <div class="row text-center">
         <div id="newContentPositioned"
              class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
             <div class=" animate-box fadeInUp animated" style="">
                 <figure>
-                    <img src="../images/icon/marker.png" style="with: 64px; height: 64px;"/>
+                    <img src="../images/menu/marcador.png" style="with: 64px; height: 64px;"/>
                 </figure>
-                <h5 style="margin: 0px;">Nuevo Contenido</h5>
-            </div>
-        </div>
-        <div id="test"
-             class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
-            <div class=" animate-box fadeInUp animated " style="">
-                <figure>
-                    <img src="../images/menu/tacho.png" style="with: 64px; height: 64px;"/>
-                </figure>
-                <h5 style="margin: 0px;">Borrar Contenido</h5>
+                <h5 style="margin: 0px;">Nuevo Contenido Educativo Posicionado</h5>
             </div>
         </div>
         <div id="selectMapFromGallery"
              class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
             <div class=" animate-box fadeInUp animated " style="">
                 <figure>
-                    <img src="../images/menu/select.png" style="with: 64px; height: 64px;"/>
+                    <img src="../images/menu/mapaam.png" style="with: 64px; height: 64px;"/>
                 </figure>
                 <h5 style="margin: 0px;">Cargar un Mapa 2D Indoor</h5>
             </div>
         </div>
-        <div id="screenshot"
-             class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
-            <div class=" animate-box fadeInUp animated " style="">
-                <figure>
-                    <img src="../images/menu/save.png" style="with: 64px; height: 64px;"/>
-                </figure>
-                <h5 style="margin: 0px;">Tomar Captura</h5>
-            </div>
-        </div>
-        <div id="IndoorMap"
-             class="col-md-4 col-sm-4 col-xs-4 col-sm-4 menuCustom">
-            <div class=" animate-box fadeInUp animated " style="">
-                <figure>
-                    <img src="../images/menu/help.png" style="with: 64px; height: 64px;"/>
-                </figure>
-                <h5 style="margin: 0px;">Ayuda</h5>
-            </div>
-        </div>
-
+        <!--<div id="screenshot"-->
+             <!--class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">-->
+            <!--<div class=" animate-box fadeInUp animated " style="">-->
+                <!--<figure>-->
+                    <!--<img src="../images/menu/camara-de-fotos.png" style="with: 64px; height: 64px;"/>-->
+                <!--</figure>-->
+                <!--<h5 style="margin: 0px;">Tomar Captura</h5>-->
+            <!--</div>-->
+        <!--</div>-->
         <div id="volverIndex"
              class="col-md-4 col-sm-4 col-xs-4 col-sm-4 menuCustom">
             <div class=" animate-box fadeInUp animated " style="">
@@ -220,10 +283,10 @@
 </div>
 <script>
 
-    $(function () {
-        $('#demo_box').popmenu();
-
-    })
+    //    $(function () {
+    //        $('#demo_box').popmenu();
+    //
+    //    })
 </script>
 </body>
 </html>

@@ -47,21 +47,21 @@
 
 
 <body onload="init()">
-<div class="container">
-    <div class="row">
-        <div
-                class="col-md-8 col-md-offset-2 text-center heading-section animate-box fadeInUp animated"
-                style="margin-bottom: 1em; margin-top: 1em;">
-            <div class="logo">
-                <p style="margin-left: 0.5em;">Herramienta de Autor</p>
+<div id='title' class="container ">
+    <div class="row " style="margin-bottom:20px">
+        <div class="col-md-8 col-md-offset-2 text-center  animate-box fadeInUp animated"
+             style="margin-bottom: 1em; margin-top: 1em; float:left;">
+            <div class="logo " style="position: fixed; left: 50%;margin-left: -140px;">
+                <p class="principal" style="margin-left: 1.8em; font-size:21px;">Herramienta de Autor</p>
             </div>
         </div>
-        <div style="float: right;">
-            <a id="optionMenu" href="#"><img src="../images/opciones.png" style="with: 48px; height: 48px;"/></a>
+        <div style="float: right; margin-top: 7px;">
+            <a id="cleanTemplate" href="#"><img src="../images/menu/borrar.png" style="width: 40px; height: 40px;"/></a>
+            <a id="previewTaskCollectTemplate" href="#"><img src="../images/menu/ojo.png" style="width: 40px; height: 40px;"/></a>
         </div>
     </div>
 </div>
-
+</div>
 <div id="imageModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
@@ -159,38 +159,6 @@
             </form> <!-- fin template -->
         </div>
     </section>
-
-    <div id="menu" class="container">
-        <div id="previewTaskCollectTemplate"
-             class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
-            <div class=" animate-box fadeInUp animated " style="">
-                <figure>
-                    <img src="../images/menu/select.png" style="width: 64px; height: 64px;"/>
-                </figure>
-                <h5 style="margin: 0px;">Previsualizar</h5>
-            </div>
-        </div>
-        <div id="EliminarContenido"
-             class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
-            <div class=" animate-box fadeInUp animated " style="">
-                <figure>
-                    <img src="../images/menu/tacho.png" style="width: 64px; height: 64px;"/>
-                </figure>
-                <h5 style="margin: 0px;">Borrar Template</h5>
-            </div>
-        </div>
-        <div id="volverIndex"
-             class="col-md-4 col-sm-4 col-xs-4 col-sm-4 menuCustom">
-            <div class=" animate-box fadeInUp animated " style="">
-                <figure>
-                    <img src="../images/menu/home.png" style="width: 64px; height: 64px;"/>
-                </figure>
-                <h5 style="margin: 0px;">Volver</h5>
-            </div>
-        </div>
-    </div>
-</div>
-
 </div>
 </body>
 </html>

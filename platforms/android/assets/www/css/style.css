@@ -1,9 +1,8 @@
 @font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
-  font-weight: normal;
+  font-family: 'Meera Inimai';
+  font-weight: 400;
   font-style: normal;
+  src: url("../fonts/MeeraInimai-Regular.ttf") format('ttf');
 }
 /* =======================================================
 *
@@ -12,7 +11,8 @@
 *
 * ======================================================= */
 body {
-  font-family: "Open Sans", Arial, sans-serif;
+  /*font-family: "Open Sans", Arial, sans-serif;*/
+  font-family: 'Meera Inimai';
   line-height: 1.6;
   font-size: 16px;
   background: #fff;
@@ -39,12 +39,12 @@ p, ul, ol {
   margin-bottom: 1.5em;
   font-size: 16px;
   color: #848484;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: 'Meera Inimai', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #5a5a5a;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: 'Meera Inimai', sans-serif;
   font-weight: 400;
   margin: 0 0 5px 0;
 }
@@ -502,7 +502,7 @@ figure {
   width: 100px;
   margin-left: -50px;
   height: 2px;
-  background: #66D37E;
+  background: #2381C4;
 }
 .heading-section h3 {
   font-size: 40px;
@@ -534,7 +534,7 @@ figure {
 }
 
 .services {
-  background: #66D37E;
+  background: #2381C4;
   padding: 40px 20px 20px 20px;
   margin-bottom: 30px;
 }
@@ -551,7 +551,7 @@ figure {
   font-size: 18px;
   font-weight: 400;
   color: #fff;
-  color: #FBFFA3;
+  color: #fff;
 }
 .services p {
   font-size: 16px;
@@ -1384,9 +1384,9 @@ figure {
 /******************* eBuilder *****************/
 .logo { 
     width: 17em;
-    height: 32px;
+    height: 40px;
     background-repeat: no-repeat;
-    background-image: url(../images/logo.png);
+    background-image: url(../images/index/logo.png);
     margin: 5px auto 0px;
     background-size: 2.2em;
 }
@@ -1543,3 +1543,81 @@ figure {
 			border-top: 0;
 		}
 
+.principal::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    background: #2381C4;
+    width: 150px;
+    left: 20%;
+    top: calc(100% - 5px);
+    margin-top: 16px;
+}
+.carousel-inner > .item > img{
+  margin:auto;
+}
+
+.carousel-inner > .item > i {
+  margin:auto;
+}
+
+
+.leaflet-affine-toolbox {
+  margin-right: 40px;
+  z-index:20;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+  border-radius: 4px;
+  width: 5.6em;
+  height:2.7em
+}
+
+.leaflet-affine-toolbox a:hover {
+  background-color: #f4f4f4;
+  cursor:pointer;
+}
+
+.leaflet-affine-toolbox a {
+  float: left;
+  background-color: #FFF;
+  border-bottom: 1px solid #CCC;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0.3em;
+  border-radius: 0.2em;
+}
+
+.accept-affine-image{
+  background-image:url(../img/confirm.png);
+  background-position: 3px 2px;
+  background-repeat: no-repeat;
+  background-size: 2.4em auto;
+}
+
+.remove-affine-image{
+  background-image:url(../img/dustbin.png);
+  background-position: 5px 2.5px;
+  background-repeat:no-repeat;
+  background-size: 1.7em auto;
+  position: absolute;
+  left: 3em;
+  top: 0em;
+}
+
+#opacity-slider{
+  width: 5.4em;
+  padding: 0em;
+  margin-top: 0.3em;
+  height: 0.85em;
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.35);
+  right: 0.05em;
+}
+
+#opacity-slider a{
+  width: 0.1em;
+  height: 1.1em;
+  top:-0.5em;
+}
+
+.leaflet-pane .leaflet-overlay-pane img { pointer-events: all !important; }

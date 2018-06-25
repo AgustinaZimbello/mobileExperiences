@@ -1,6 +1,9 @@
 var ready;
 var options;
 var crd;
+var increment = 0;
+var alphabet = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n","o");
+var definedPoints = [];
 
 function phonegapReady() {
     // Necesario para conocer si las app de PhoneGap ya escuentran
@@ -9,7 +12,22 @@ function phonegapReady() {
     loadMap();
 }
 
+function hideMenuWhenOptionsPoiIsShowed() {
+    var menu = $('#menu');
+    // check if element is Visible
+    var isVisible = menu.is(':visible');
+    if (isVisible === true) {
+        $('#map').css("height", "100%");
+        menu.hide();
+    } else {
+        $('#map').css("height", "60%");
+        menu.show();
+    }
+}
+
+
 function loadMap() {
+    localStorage.clear();
     localStorage.setItem("typeMap", "geoMap");
     map = L.map('map').fitWorld();
     tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
@@ -37,6 +55,23 @@ function loadMap() {
 
 $(function () {
 
+    $('#export').click(function () {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
+
+        function gotFS(fileSystem) {
+            fileSystem.root.getDirectory("data", {create: true}, gotDir);
+        }
+
+        function gotDir(dirEntry) {
+            dirEntry.getFile("test.txt", {create: true, exclusive: true}, gotFile);
+        }
+
+        function gotFile(fileEntry) {
+            // Do s
+
+    }});
+
     $('#selectMapFromGallery').click(function () {
         var options = {
             maximumImagesCount: 1,
@@ -57,12 +92,6 @@ $(function () {
         }, options);
     });
 
-    function showPOIOptions() {
-        $("#demo_box").empty();
-        $("#demo_box").append(' <span class="pop_ctrl"><i class="fa fa-cog" style="color:orange"></i></span>  <ul id="demo_ul_2"><li id="template" class="demo_li"><a href="#"><div><i class="fa fa-mobile"></i></div><div>Template</div></a></li><li id="qr" class="demo_li"><div><i id="qr" class="fa fa-qrcode"></i></div><div>QR</div></li></ul>')
-        $("#demo_box").css({'z-index': 9999, position: "fixed", top: event.pageY, left: event.pageX});
-        $("#demo_box").popmenu({'background': 'orange', 'focusColor': 'darkorange', 'borderRadius': '0'});
-    }
 
     $('#newContentPositioned').click(function () {
         increment++;
@@ -70,15 +99,15 @@ $(function () {
         var idAux = id;
         var copyId;
         var original = document.getElementById(idAux);
-
+        definedPoints[increment - 1] = alphabet[increment - 1];
         copy = document.createElement('div');
         var ep = document.createElement('div');
-        copy.id = 'content' + increment;
+        copy.id = 'content_' + alphabet[increment - 1];
         copyId = copy.id;
         ep.id = copy.id + "ep";
         idEp = copy.id + "ep";
         copy.appendChild(ep);
-        copy.className = 'window draggable-content';
+        copy.className = 'window draggable-content ' + alphabet[increment - 1];
         ep.setAttribute('class', 'content-ep');
 
         /* PlumbIcon is a class that defines an icon to the marker. This icon has the
@@ -111,6 +140,7 @@ $(function () {
                 copy.appendChild(ep);
                 ep.setAttribute('class', 'content-ep');
 
+
                 this._setIconStyles(div, 'icon');
 
                 jsPlumb.makeSource($(copy), {
@@ -121,9 +151,9 @@ $(function () {
                     }],
                     connectorStyle: {
                         strokeStyle: nextColour(),
-                        lineWidth: 4
+                        lineWidth: 0
                     },
-                    maxConnections: 5,
+                    maxConnections: 0,
                     onMaxConnections: function (info, e) {
                         alert("Maximum connections (" + info.maxConnections + ") reached");
                     }
@@ -163,18 +193,14 @@ $(function () {
 
         var myIcon = L.plumbIcon({
             // Specify a class name we can refer to in CSS.
-            className: 'leaflet-div-icon _jsPlumb_endpoint_anchor_ draggable-content window',
+            className: 'leaflet-div-icon _jsPlumb_endpoint_anchor_ draggable-content window ' + alphabet[increment - 1],
             // Set a markers width and height.
             iconSize: [30, 50]
+
         });
 
-        if (userPosition == null) {
 
-            /*
-             * ALTERNATIVE 1: Random mark placement: Here I use getRandomInRange() to get a random lat lng where to place the marker...
-             * This alternative is used whenever there is no sensing mechanism to detect the user position
-             */
-            //Here I use getRandomInRange() to get a random lat lng where to place the marker...
+        if (userPosition == null) {
             var margin = 0.00150;
             var lat = getRandomInRange(map.getBounds()._southWest.lat + margin, map.getBounds()._northEast.lat - margin, 14);
             var lng = getRandomInRange(map.getBounds()._southWest.lng + margin, map.getBounds()._northEast.lng - margin, 14);
@@ -182,10 +208,6 @@ $(function () {
             console.log(latlng.lat, latlng.lng);
 
         } else {
-
-            /*
-             * ALTERNATIVE 2: Mark placement in current position;
-             */
             var lat = userPosition.latlng.lat;
             var lng = userPosition.latlng.lng;
             latlng = userPosition.latlng;
@@ -197,10 +219,11 @@ $(function () {
             className: copyId,
             zIndexOffset: 1000
         }).addTo(map);
-        mark._icon.className = mark._icon.className + ' _jsPlumb_endpoint_anchor_ draggable-content window';
+        mark._icon.className = mark._icon.className + ' _jsPlumb_endpoint_anchor_ draggable-content window ' + alphabet[increment - 1];
         mark._icon.children[0].id = id + "ep";
-        localStorage.setItem(copyId + "_poslat", mark.getLatLng().lat);
-        localStorage.setItem(copyId + "_poslong", mark.getLatLng().lng);
+
+
+        localStorage.setItem(copyId, jsonLatLong(mark.getLatLng().lat, mark.getLatLng().lng));
         //Adding marker to 'markers' array (this does not include the content)
         //addMarkerToList(copyId, copyClass, lat, lng, idEp);
 
@@ -211,16 +234,15 @@ $(function () {
             console.log("mouseover");
         });
         $('#' + copyId).on("mouseup", function (event) {
-            showPOIOptions();
             localStorage.setItem("currentPOI", copyId);
+            showPOIOptions();
 
         });
         $('#' + copyId).on("mouseout", function (c) {
             map.dragging.enable();
             mark.dragging.enable();
-            localStorage.setItem(copyId + "_poslat", mark.getLatLng().lat);
-            localStorage.setItem(copyId + "_poslong", mark.getLatLng().lng);
-            console.log("mouseout" + mark.getLatLng().lat);
+            //update the value is the marker was moved
+            localStorage.setItem(copyId, jsonLatLong(mark.getLatLng().lat, mark.getLatLng().lng));
         });
         $('.content-ep').on("mousedown", function (c) {
             map.dragging.disable();
@@ -233,28 +255,61 @@ $(function () {
             console.log("mouseup");
         });
 
-
     });
-    $('#demo_box').on('click', '#qr', function () {
+
+
+
+    /***************** POP MENU ********************************/
+
+    $('#demo_box').on('click', '#arrow', function () {
         var currentPOI = localStorage.getItem("currentPOI");
         var currentPOIKey = currentPOI + '_qrcode';
         $("#qrcode").empty();
         var qrcode = new QRCode(document.getElementById("qrcode"), {
-            text: currentPOI,
+            text: currentPOIKey,
             width: 100,
             height: 100,
             colorDark: "#000000",
             colorLight: "#ffffff",
             correctLevel: QRCode.CorrectLevel.H
         });
+        addQRToJson(qrcode);
         $('#QRModal').modal('show');
-        localStorage.setItem(currentPOIKey, qrcode);
-        console.log(currentPOI);
+
+    });
+
+    $('#demo_box').on('click', '#qr', function () {
+        var definedPointsNotFirst = definedPoints.slice(1, definedPoints.length);
+        console.log(definedPointsNotFirst);
+        definedPointsNotFirst.forEach(function (element) {
+            var elementAlph = document.createElement('div');
+            var url = '../images/abccontents/content_';
+
+            elementAlph.id = element;
+            //elementAlph.className='item col-md-4 col-sm-4 col-xs-6 col-sm-4';
+            var elemImage = document.createElement("img");
+            elemImage.setAttribute("src", url + element + ".png");
+            elemImage.setAttribute("height", "30");
+            elemImage.setAttribute("width", "30");
+            elementAlph.className = 'item';
+            elementAlph.appendChild(elemImage);
+
+            $("#pois").append(elementAlph);
+
+        });
+        var firstElement = definedPoints[0];
+        var firstDiv = document.getElementById(firstElement);
+        firstDiv.className = 'item active';
+        $('#connect').modal('show');
     });
 
     $('#demo_box').on('click', '#template', function () {
-        window.open('../templates/menuTemplates.html', '_blank', 'location=yes');
+        window.open('../templates/associateTemplates.html', '_blank', 'location=yes');
     });
+
+
+    /****************END POI MENU********************/
+
 
     function hideComponents() {
         $('#menu').hide();

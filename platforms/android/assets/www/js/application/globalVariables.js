@@ -32,3 +32,13 @@ var contentIs;
 // Image data of thumbnail
 var thumb;
 var screenshot = 0;
+
+var arrowMeter = 0;
+var colourmap = {};
+colourmap["content_a"] = "#2381C4";
+colourmap["content_b"] ="#FF7058"
+colourmap["content_c"] ="#FFD05B"
+colourmap["content_d"] ="#90DFAA"
+colourmap["content_e"] ="#54C0EB"
+colourmap["content_f"] ="#90DFAA"
+

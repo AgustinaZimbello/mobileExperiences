@@ -33,24 +33,81 @@
     text-decoration: none;
     color: #000;
     cursor: move;
-    background-image: url('../img/content.png');
     background-size: 2.6em auto;
     background-repeat: no-repeat;
     box-shadow: none;
     background-color: transparent;
 }
 
+.a{
+    background-image: url('../images/abccontents/content_a.png');
+}
+.b{
+    background-image: url('../images/abccontents/content_b.png');
+}
+.c{
+    background-image: url('../images/abccontents/content_c.png');
+}
+.d{
+    background-image: url('../images/abccontents/content_d.png');
+}
+.e{
+    background-image: url('../images/abccontents/content_e.png');
+}
+.f{
+    background-image: url('../images/abccontents/content_f.png');
+}
+.g{
+    background-image: url('../images/abccontents/content_g.png');
+}
+.h{
+    background-image: url('../images/abccontents/content_h.png');
+}
+.i{
+    background-image: url('../images/abccontents/content_i.png');
+}
+.j{
+    background-image: url('../images/abccontents/content_j.png');
+}
+.k{
+    background-image: url('../images/abccontents/content_k.png');
+}
+.l{
+    background-image: url('../images/abccontents/content_l.png');
+}
+.m{
+    background-image: url('../images/abccontents/content_m.png');
+}
+.n{
+    background-image: url('../images/abccontents/content_n.png');
+}
+.ñ{
+    background-image: url('../images/abccontents/content_ñ.png');
+}
+.o{
+    background-image: url('../images/abccontents/content_o.png');
+}
+.p{
+    background-image: url('../images/abccontents/content_p.png');
+}
+
+
+
+
 .content-ep{
     position: relative;
     width: 1.2em;
     height: 1.2em;
-    background-color: green;
+    background-color: grey;
     opacity: 0.6;
     cursor: pointer;
     border-radius: 1em;
     left: 0.24em;
     bottom: -3.5em;
     cursor: pointer;
-   
+
 }
 
+.carousel-inner > .item > img{
+     margin:auto;
+ }

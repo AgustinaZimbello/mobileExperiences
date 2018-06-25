@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="../css/superfish.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/template.css">
+
+    <link rel="stylesheet" href="../css/leaflet.css">
+    <link rel="stylesheet" href="../css/esri-leaflet-geocoder.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <script src="../cordova.js"></script>
+
+    <script src="../js/application/globalVariables.js"></script>
+    <script src="../libs/jquery-2.1.1.min.js"></script>
+    <script src="../js/application/index.js"></script>
+    <script src="../js/css/bootstrap.min.js"></script>
+    <script src="../maps/js/localStorageManager.js"></script>
+    <script src="js/createContent.js"></script>
+    <script src="js/utilModal.js"></script>
+    <script type="text/javascript">
+        function init() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        function onDeviceReady() {
+            phonegapReady();
+
+        }
+
+    </script>
+    <title>Herramienta de Autor</title>
+</head>
+<body onload="init()">
+<div class="container ">
+    <div class="row " style="margin-bottom:20px">
+        <div class="col-md-8 col-md-offset-2 text-center  animate-box fadeInUp animated"
+                style="margin-bottom: 1em; margin-top: 1em; float:left;">
+            <div class="logo " style="position: fixed; left: 50%;margin-left: -140px;">
+                <p class="principal" style="margin-left: 0.5em; font-size:21px;">Herramienta de Autor</p>
+            </div>
+        </div>
+        <div style="float: right; margin-top: 7px;">
+            <a id="saveWhiteTemplate" href="#"><img src="../images/menu/guardar.png" style="width: 40px; height: 40px;"/></a>
+            <a id="cleanTemplate" href="#"><img src="../images/menu/escoba.png" style="width: 40px; height: 40px;"/></a>
+            <a id="optionMenu" href="#"><img src="../images/menu/menu.png" style="width: 40px; height: 40px;"/></a>
+        </div>
+    </div>
+</div>
+
+<div id="imageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Icono representativo del juego</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center">
+                    <div id="iconFromGallery" style="height: 100%; background-color: rgba(222, 222, 222, 0.1);">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active col-md-4 col-sm-4 col-xs-6 col-sm-4 ">
+                                    <i id="globe" class="fa fa-globe fa-5x fa-refresh"></i>
+                                </div>
+                                <div class="item col-md-4 col-sm-4 col-xs-6 col-sm-4">
+                                    <i id="refresh" class=" fa fa-child fa-5x fa-refresh"></i>
+                                </div>
+                                <div class="item col-md-4 col-sm-4 col-xs-6 col-sm-4">
+                                    <i id="puzzle" class=" fa fa-puzzle-piece fa-5x fa-refresh"></i>
+                                </div>
+                                <div class="item col-md-4 col-sm-4 col-xs-6 col-sm-4">
+                                    <i id="map" class=" fa fa-map-o fa-5x fa-refresh"></i>
+                                </div>
+
+                            </div>
+
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                               data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                               data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- Modal content fin -->
+<div id="indicationMapModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Mapa de indicaci&oacute;n del juego</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center">
+                    <div id="selectExisting"
+                         class="col-md-12 col-sm-12 col-xs-12 col-sm-12">
+                        <div class="services animate-box fadeInUp animated"
+                             style="border-radius: 2em;">
+                            <figure>
+                                <img src="../images/icon/tool.png"/>
+                            </figure>
+                            <h3>Cargar captura de la galeria</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="template" style="height: 100%; margin-bottom: 2px">
+    <section id="four">
+        <div class="container">
+            <h3>Creacion de Contenidos de Template</h3>
+            <p>Crea los tipos de contenido que podras agregar luego a un template</p>
+            <div class="row uniform" style="margin-bottom: 10px;">
+                <div class="12u alignCenter"><input type="text" id="wt_contentName"
+                                                    placeholder="Ingrese un nombre de Contenido"/></div>
+            </div>
+            <form id="blankContent" class="templateForm text-center bgimg" method="post" action="#">
+                <a id="imageIndicationMapPreview" href="#" class="image" ></a>
+            </form> <!-- fin template -->
+        </div>
+    </section>
+    <div id="menu" class="container">
+        <div class="row text-center">
+            <div id="question"
+                 class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+                <div class=" animate-box fadeInUp animated " style="">
+                    <figure>
+                        <img src="../images/menu/pregunta.png" style="with: 64px; height: 64px;"/>
+                    </figure>
+                    <h5 style="margin: 0px;">Crear Pregunta</h5>
+                </div>
+            </div>
+            <div id="image"
+                 class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+                <div class=" animate-box fadeInUp animated " style="">
+                    <figure>
+                        <img src="../images/menu/paisaje.png" style="with: 64px; height: 64px;"/>
+                    </figure>
+                    <h5 style="margin: 0px;">Crear Imagen </h5>
+                </div>
+            </div>
+            <div id="text"
+                 class="col-md-4 col-sm-4 col-xs-4 col-sm-4  menuCustom">
+                <div class=" animate-box fadeInUp animated " style="">
+                    <figure>
+                        <img src="../images/menu/editor-de-texto.png" style="with: 64px; height: 64px;"/>
+                    </figure>
+                    <h5 style="margin: 0px;">Crear Texto</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

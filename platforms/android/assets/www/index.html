@@ -1,104 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Meera+Inimai" rel="stylesheet">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
-
-<script src="cordova.js"></script>
-<script src="js/application/globalVariables.js"></script>
-<script src="libs/jquery-2.1.1.min.js"></script>
-<script src="js/application/index.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/application/globalVariables.js"></script>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script src="js/application/index.js"></script>
 
 
-<script type="text/javascript">
-	function init() {
-		document.addEventListener("deviceready", onDeviceReady, false);
-	}
-	function onDeviceReady() {
-		phonegapReady();
-	}
-</script>
+    <script type="text/javascript">
+        function init() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
 
-<title>Herramienta de Autor</title>
+        function onDeviceReady() {
+            phonegapReady();
+        }
+    </script>
+
+    <title>Herramienta de Autor</title>
 </head>
 
 <!--<img src="images/index/createContent.png" style="with: 52px; height: 52px;"/>-->
 <body onload="init()">
-	<div class="container">
-			<div class="row">
-				<div
-					class="col-md-8 col-md-offset-2 text-center heading-section animate-box fadeInUp animated"
-					style="margin-bottom: 2em; margin-top: 1em;">
-					<div class="logo">
-						<p style="margin-left: 0.5em;">Herramienta de Autor</p>
-					</div>
-				</div>
-			</div>
-	</div>
-	<div class="container">
-		<div class="row text-center">
-			<div id="createContents"
-				 class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
-					<div class="services animate-box fadeInUp animated"
-						style="border-radius: 2em;">
-						<figure>
-							<img src="images/index/createContent.png"/>
-						</figure>
-						<h3>Crear Contenidos Educativos</h3>
-					</div>
-			</div>
-			<div id="createPositions"
-					 class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
-					<div class="services animate-box fadeInUp animated"
-							style="border-radius: 2em;">
-							<figure>
-								<img src="images/index/createPositions.png" />
-							</figure>
-							<h3>Crear Posiciones para Elementos Educativos</h3>
-					</div>
-			</div>
-			<div id="createElementPositioned"
-					class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
-					<div class="services animate-box fadeInUp animated"
-						style="border-radius: 2em;">
-						<figure>
-							<img src="images/index/createElementPosition.png" />
-						</figure>
-						<h3>Crear Contenidos Educativos Posicionados</h3>
-					</div>
-			</div>
-			<div id="createTemplates"
-					  class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
-					<div class="services animate-box fadeInUp animated"
-						style="border-radius: 2em;">
-						<figure>
-							<img src="images/index/createTemplates.png" alt="user" />
-						</figure>
-						<h3>Seleccionar y Editar Templates</h3>
-					</div>
-			</div>
-		</div>
-		<!-- <div class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
-					<div class="services animate-box fadeInUp animated">
-						<figure>
-							<img src="images/createContent.png" alt="user">
-						</figure>
-						<h3>IMPORTAR CONTENIDOS Y CREAR POSICIONES</h3>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
-					<div class="services animate-box fadeInUp animated">
-						<figure>
-							<img src="images/createContent.png" alt="user">
-						</figure>
-						<h3>IMPORTAR CONTENIDOS Y POSICIONES</h3>
-					</div>
-				</div> -->
-	</div>
+<div class="container">
+    <div class="row">
+        <div
+                class="col-md-8 col-md-offset-2 text-center heading-section animate-box fadeInUp animated"
+                style="margin-bottom: 3em; margin-top: 3em;">
+            <div class="logo">
+                <p style="margin-left: 1.5em; font-size: 23px;">Herramienta de Autor</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row text-center">
+        <div id="createPosition"
+             class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
+            <div class="services animate-box fadeInUp animated"
+                 style="border-radius: 2em;">
+                <figure>
+                    <img src="images/index/posiciones.png"/>
+                </figure>
+                <h3>Crear Posiciones</h3>
+            </div>
+        </div>
+        <div id="createContents"
+             class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
+            <div class="services animate-box fadeInUp animated"
+                 style="border-radius: 2em;">
+                <figure>
+                    <img src="images/index/createContent.png"/>
+                </figure>
+                <h3>Crear Contenidos Educativos</h3>
+            </div>
+        </div>
+        <div id="createTemplates"
+             class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
+            <div class="services animate-box fadeInUp animated"
+                 style="border-radius: 2em;">
+                <figure>
+                    <img src="images/index/createTemplates.png"/>
+                </figure>
+                <h3>Visualizar y Crear Templates</h3>
+            </div>
+        </div>
+        <div id="createElementPositioned"
+             class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
+            <div class="services animate-box fadeInUp animated"
+                 style="border-radius: 2em;">
+                <figure>
+                    <img src="images/index/createPositions.png"/>
+                </figure>
+                <h3>Crear Elementos Educativos </h3>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
+                <div class="services animate-box fadeInUp animated">
+                    <figure>
+                        <img src="images/createContent.png" alt="user">
+                    </figure>
+                    <h3>IMPORTAR CONTENIDOS Y CREAR POSICIONES</h3>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6 col-sm-4">
+                <div class="services animate-box fadeInUp animated">
+                    <figure>
+                        <img src="images/createContent.png" alt="user">
+                    </figure>
+                    <h3>IMPORTAR CONTENIDOS Y POSICIONES</h3>
+                </div>
+            </div> -->
+</div>
 </body>
 </html>

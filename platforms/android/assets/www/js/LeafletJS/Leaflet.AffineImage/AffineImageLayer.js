@@ -10,7 +10,7 @@
 */
 
 
-L.AffineImage = L.Class.extend({
+L.AffineImage = L.Layer.extend({
 
     initialize: function (options) {
         this._hasToolbox = false;
