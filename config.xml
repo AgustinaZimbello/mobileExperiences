@@ -23,7 +23,8 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="~6.2.3" />
-    <plugin name="com.sharerevolution.cordova.screenshot" spec="https://github.com/perry2of5/cordova-screenshot-crosswalk-ios-only.git" />
     <plugin name="cordova-plugin-imagepicker" spec="^1.3.0" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="org.devgeeks.Canvas2ImagePlugin" spec="https://github.com/devgeeks/Canvas2ImagePlugin.git" />
+    <plugin name="com.darktalker.cordova.screenshot" spec="https://github.com/gitawego/cordova-screenshot.git" />
 </widget>

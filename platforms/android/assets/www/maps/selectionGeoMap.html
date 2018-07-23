@@ -155,12 +155,12 @@
             </div>
         </div>
         <div style="float: right; margin-top: 7px;">
+            <a id="screenshotOpenModal" href="#"><img src="../images/screenshot.png" style="width: 40px; height: 40px;"/></a>
             <a id="saveWhiteTemplate" href="#"><img src="../images/menu/descargar.png" style="width: 40px; height: 40px;"/></a>
             <a id="cleanTemplate" href="#"><img src="../images/menu/borrar.png" style="width: 40px; height: 40px;"/></a>
             <a id="optionMenu" href="#"><img src="../images/menu/menu.png" style="width: 40px; height: 40px;"/></a>
         </div>
     </div>
-</div>
 </div>
 
 <div id="map"
@@ -257,7 +257,7 @@
                 <figure>
                     <img src="../images/menu/mapaam.png" style="with: 64px; height: 64px;"/>
                 </figure>
-                <h5 style="margin: 0px;">Cargar un Mapa 2D Indoor</h5>
+                <h5 style="margin: 0px;">Cargar un Mapa 2D Indoor de la Galeria</h5>
             </div>
         </div>
         <!--<div id="screenshot"-->
@@ -275,19 +275,42 @@
                 <figure>
                     <img src="../images/menu/home.png" style="with: 64px; height: 64px;"/>
                 </figure>
-                <h5 style="margin: 0px;">Volver</h5>
+                <h5 style="margin: 0px;">Regresar a la pantalla inicial</h5>
             </div>
         </div>
     </div>
 
 </div>
-<script>
 
-    //    $(function () {
-    //        $('#demo_box').popmenu();
-    //
-    //    })
-</script>
+<!-- Modal screenshot-->
+<div id="screenshotModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Captura de la pantalla</h2>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center">
+                    <div class="col-md-4 col-sm-4 col-xs-4 col-sm-4">
+                        <figure>
+                            <img src="../images/advertencia.png" style="with: 64px; height: 64px;"/>
+                        </figure>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-8 col-sm-8 pull-right">
+                        <h4> Te recomendamos que hagas zooom en el mapa antes de tomar la captura.
+                            Si deseas volver presiona en el boton cerrar caso contrario presiona en el boton capturar </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="screenshot" class="btn btn-primary">Capturar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="cerrar">Cerrar </button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 

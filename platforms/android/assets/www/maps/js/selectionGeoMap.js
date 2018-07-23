@@ -312,24 +312,21 @@ $(function () {
 
 
     function hideComponents() {
-        $('#menu').hide();
-        $('#title').hide();
-        $('#map').css("height", "100%");
-        setTimeout(10000);
+        document.getElementById("menu").style.visibility = "hidden";
+        document.getElementById("title").style.visibility = "hidden";
     }
+    // $('#screenshotOpenModal').click(function () {
+    //     $('#screenshotModal').modal('show');
+    // });
 
-    $('#screenshot').click(function () {
+
+
+    $('#screenshotOpenModal').click(function () {
+        $('#cerrar').click();
         hideComponents();
-        screenshot++;
-        var nameCapture = 'mapCapture' + screenshot.toString();
-        navigator.screenshot.save(function (error, res) {
-                if (error) {
-                    console.error(error);
-                } else {
-                    console.log('ok', res.filePath); //should be path/to/myScreenshot.jpg
-                }
-            },
-            'jpg', 50, 'pepe');
+        setTimeout(capture(), 50000);
+
+
     });
 
     $('#volverIndex').click(function () {
@@ -358,6 +355,20 @@ function getRandomInRange(from, to, fixed) {
     // .toFixed() returns string, so ' * 1' is a trick to convert to number
 }
 
+function capture (){
+screenshot++;
+var screenshotName="screenshot_"+screenshot;
+navigator.screenshot.save(function (error, res) {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log('ok'+ res.filePath); //should be path/to/myScreenshot.jpg
+            localStorage.setItem("currentScreenshot",res.filePath);
+            window.open('screenshotEdit.html', '_top', 'location=yes');
+        }
+    },
+    'jpg', 50, screenshotName);
+}
 /*
  * Returns a random integer between min and max
  * Using Math.round() will give you a non-uniform distribution!

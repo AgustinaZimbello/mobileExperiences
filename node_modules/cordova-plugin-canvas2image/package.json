@@ -1,0 +1,103 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/devgeeks/Canvas2ImagePlugin.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/devgeeks/Canvas2ImagePlugin.git",
+        "spec": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:devgeeks/Canvas2ImagePlugin.git",
+          "sshUrl": "git+ssh://git@github.com/devgeeks/Canvas2ImagePlugin.git",
+          "httpsUrl": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
+          "gitUrl": "git://github.com/devgeeks/Canvas2ImagePlugin.git",
+          "shortcut": "github:devgeeks/Canvas2ImagePlugin",
+          "directUrl": "https://raw.githubusercontent.com/devgeeks/Canvas2ImagePlugin/master/package.json"
+        }
+      },
+      "C:\\Users\\Martín\\mobileExperiences"
+    ]
+  ],
+  "_from": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
+  "_id": "cordova-plugin-canvas2image@0.6.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-canvas2image",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/devgeeks/Canvas2ImagePlugin.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/devgeeks/Canvas2ImagePlugin.git",
+    "spec": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:devgeeks/Canvas2ImagePlugin.git",
+      "sshUrl": "git+ssh://git@github.com/devgeeks/Canvas2ImagePlugin.git",
+      "httpsUrl": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
+      "gitUrl": "git://github.com/devgeeks/Canvas2ImagePlugin.git",
+      "shortcut": "github:devgeeks/Canvas2ImagePlugin",
+      "directUrl": "https://raw.githubusercontent.com/devgeeks/Canvas2ImagePlugin/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git#7cb80bb880373f788b5f3c653605e1d533baeabc",
+  "_shasum": "fcc92d0b9bc22af247f1b4d7d187cedf656afb90",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/devgeeks/Canvas2ImagePlugin.git",
+  "_where": "C:\\Users\\Martín\\mobileExperiences",
+  "author": {
+    "name": "tommy-carlos williams",
+    "email": "tommy@devgeeks.org",
+    "url": "http://devgeeks.org"
+  },
+  "bugs": {
+    "url": "https://github.com/devgeeks/Canvas2ImagePlugin/issues"
+  },
+  "cordova": {
+    "id": "org.devgeeks.Canvas2ImagePlugin",
+    "platforms": [
+      "ios",
+      "android",
+      "wp8"
+    ]
+  },
+  "dependencies": {},
+  "description": "This plugin allows you to save the contents of an HTML canvas tag to the iOS Photo Library, or Android Gallery from your app.",
+  "devDependencies": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "gitHead": "7cb80bb880373f788b5f3c653605e1d533baeabc",
+  "homepage": "https://github.com/devgeeks/Canvas2ImagePlugin#readme",
+  "keywords": [
+    "canvas",
+    "image",
+    "photo library",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "cordova-wp8"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-canvas2image",
+  "optionalDependencies": {},
+  "readme": "Canvas2ImagePlugin\r\n============\r\n\r\n### NOTE: This plugin is NOT being actively maintained. I would love someone with a decent fork of it to take it over. Contact me if you are interested.\r\n\r\nThis plugin allows you to save the contents of an HTML canvas tag to the iOS Photo Library, Android Gallery or WindowsPhone 8 Photo Album from your app.\r\n\r\nSee an example project using it here: [https://github.com/devgeeks/Canvas2ImageDemo](https://github.com/devgeeks/Canvas2ImageDemo) - note: this app does not work in wp8.\r\n\r\nInstallation\r\n------------\r\n\r\n### For Cordova 3.0.x:\r\n\r\n1. To add this plugin just type: `cordova plugin add https://github.com/devgeeks/Canvas2ImagePlugin.git` or `phonegap local plugin add https://github.com/devgeeks/Canvas2ImagePlugin.git`\r\n2. To remove this plugin type: `cordova plugin remove org.devgeeks.Canvas2ImagePlugin` or `phonegap local plugin remove org.devgeeks.Canvas2ImagePlugin`\r\n\r\n### NOTE: For older versions of Cordova (You will probably have to use tag 0.2.0)\r\n\r\nUsage:\r\n------\r\n\r\nCall the `window.canvas2ImagePlugin.saveImageDataToLibrary()` method using success and error callbacks and the id attribute or the element object of the canvas to save:\r\n\r\n### Example\r\n```html\r\n<canvas id=\"myCanvas\" width=\"165px\" height=\"145px\"></canvas>\r\n```\r\n\r\n```javascript\r\nfunction onDeviceReady()\r\n{\r\n\twindow.canvas2ImagePlugin.saveImageDataToLibrary(\r\n        function(msg){\r\n            console.log(msg);\r\n        },\r\n        function(err){\r\n            console.log(err);\r\n        },\r\n        document.getElementById('myCanvas')\r\n    );\r\n}\r\n```\r\n\r\n## License\r\n\r\nThe MIT License\r\n\r\nCopyright (c) 2011 Tommy-Carlos Williams (http://github.com/devgeeks)\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git"
+  },
+  "version": "0.6.0"
+}

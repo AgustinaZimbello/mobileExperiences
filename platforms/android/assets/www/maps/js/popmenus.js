@@ -22,7 +22,7 @@ function showArrowOptions() {
         'borderRadius': '0',
         'iconSize': '100px'
     });
-    $('#demo_box').css('color', color);
+    $('#arrow_menu').css('color', color);
 }
 
 function showPOIPosOptions() {

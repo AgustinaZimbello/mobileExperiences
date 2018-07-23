@@ -1,21 +1,24 @@
 {
-  "prepare_queue": {
-    "installed": [],
-    "uninstalled": []
-  },
-  "config_munge": {
-    "files": {}
-  },
-  "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.lifia.mobileExperiences"
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
     },
-    "com.sharerevolution.cordova.screenshot": {
-      "PACKAGE_NAME": "com.lifia.mobileExperiences"
+    "config_munge": {
+        "files": {}
     },
-    "cordova-plugin-imagepicker": {
-      "PACKAGE_NAME": "com.lifia.mobileExperiences"
-    }
-  },
-  "dependent_plugins": {}
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.lifia.mobileExperiences"
+        },
+        "cordova-plugin-imagepicker": {
+            "PACKAGE_NAME": "com.lifia.mobileExperiences"
+        },
+        "org.devgeeks.Canvas2ImagePlugin": {
+            "PACKAGE_NAME": "com.lifia.mobileExperiences"
+        },
+        "com.darktalker.cordova.screenshot": {
+            "PACKAGE_NAME": "com.lifia.mobileExperiences"
+        }
+    },
+    "dependent_plugins": {}
 }
