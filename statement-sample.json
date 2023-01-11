@@ -1,0 +1,56 @@
+{ 
+  "acct_no": "777777777777",
+  "addr1": "70359 Forest Ave",
+  "addr2": "Apt 472",
+  "adjustments": "152.34",
+  "begin_balance": "831.12",
+  "begin_date": "November 01, 2023",
+  "city": "BUNKER HILL",
+  "deposits": "4350.12",
+  "end_balance": "4719.03",
+  "end_date": "November 30, 2023",
+  "fees": "-3.43",
+  "fullname": "Katie Carrillo",
+  "mmyy": "1123",
+  "month_year": "November 2023",
+  "prn": "777777777777",
+  "prog_name": "Balance Financial by Galileo",
+  "purchases": "-442.34",
+  "state": "MA",
+  "transactions": [
+    {
+    "amt": "-442.34",
+    "trans_desc": "All Terrain Vehicles, Inc. Boston, MA",
+    "trans_dt": "11/01/2023",
+    "trans_type": "Visa settle"    
+},
+    {
+    "amt": "4350.12",
+    "trans_desc": "Payroll Deposit",
+    "trans_dt": "11/02/2023",
+    "trans_type": "Payment" 
+},
+    {
+    "amt": "-3.43",
+    "trans_desc": "Card-to-card fee",
+    "trans_dt": "11/03/2023",
+    "trans_type": "Fee" 
+},
+    {
+    "amt": "-168.78",
+    "trans_desc": "ATM Withdrawal, LEXINGTON, MA US",
+    "trans_dt": "11/03/2023",
+    "trans_type": "Visa settle"
+    },
+    {
+    "amt": "152.34",
+    "trans_desc": "Loyalty Program Cashback",
+    "trans_dt": "11/04/2023",
+    "trans_type": "Adjustment"
+    }
+  ],
+  "transfers": "0.00",
+  "withdrawals": "-168.78",
+  "ytd_fees": "3.43",
+  "zip": "02056"
+}
